@@ -1,0 +1,106 @@
+/* Reset básico para evitar margens indesejadas em tags semânticas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #202122;
+}
+
+/* Cabeçalho e Logo */
+header {
+    padding: 15px 25px;
+    background-color: #ffffff;
+}
+
+/* A tag <figure> tem margem padrão de 40px nos navegadores; zeramos aqui */
+figure.logo {
+    margin: 0;
+    display: inline-block;
+}
+
+/* Barra divisória */
+.bar {
+    background-color: #f9f9fb;
+    padding: 15px;
+    border-top: solid 1px #cdcdcd;
+    border-bottom: solid 1px #cdcdcd;
+}
+
+/* Grid principal de 3 colunas (Sidebar | Artigo | Âncoras) */
+.content {
+    max-width: 1440px;
+    margin: auto;
+    display: grid;
+    grid-template-areas: "sidebar main anchors";
+    grid-template-columns: minmax(0, 15rem) minmax(0, 2.5fr) minmax(0, 15rem);
+    gap: 3rem;
+    padding: 0 1rem;
+}
+
+/* Colunas laterais (<aside>) e listas de navegação (<nav>) */
+aside.sidebar {
+    grid-area: sidebar;
+    border-right: solid 1px #cdcdcd;
+    padding-top: 20px;
+    padding-right: 15px;
+}
+
+aside.anchors {
+    grid-area: anchors;
+    border-left: solid 1px #cdcdcd;
+    padding-top: 20px;
+    padding-left: 15px;
+}
+
+aside nav h2 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #54595d;
+}
+
+aside nav ul {
+    list-style: none;
+}
+
+aside nav li {
+    margin-bottom: 8px;
+}
+
+aside nav a {
+    color: #3366cc;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+aside nav a:hover {
+    text-decoration: underline;
+}
+
+/* Conteúdo Principal (<main> e <article>) */
+main.main {
+    grid-area: main;
+    padding: 20px 0;
+}
+
+main article h1 {
+    font-size: 1.8rem;
+    border-bottom: 1px solid #a2a9b1;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Rodapé (<footer>) */
+footer.footer {
+    min-height: 100px;
+    border-top: solid 1px #cdcdcd;
+    padding: 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #54595d;
+}
